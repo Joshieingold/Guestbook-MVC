@@ -10,7 +10,7 @@ namespace A3_Guestbook.Models
         [Required, StringLength(50)]
         public string? Author { get; set; }
 
-        [Required, StringLength(500)]
+        [Required, StringLength(200)]
         public string? Message { get; set; }
 
         public DateTime CreatedAt { get; set; }

@@ -1,0 +1,15 @@
+@model A3_Guestbook.Models.GuestbookEntry
+
+<div class="d-flex flex-row justify-content-between align-items-center">
+    <div class="writer-details">
+        <h2>Author: <input type="text" name="Author" value="@Model.Author"/></h2>
+    </div>
+    <div class="actions-wrapper">
+        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-danger">Cancel</button>
+    </div>
+</div>
+<div>
+    <h4>Message:</h4>
+    <textarea class="form-control">@Model.Message</textarea> 
+</div>

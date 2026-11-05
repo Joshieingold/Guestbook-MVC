@@ -54,20 +54,38 @@ namespace A3_Guestbook.Services
         public void Add(GuestbookEntry entry)
         {
             entry.Id = GetUniqueId();
-            // Add the entry to the list.
-            // Call Save to refresh the JSON file.
+            List<GuestbookEntry> allEntries = GetAll();
+            allEntries.Add(entry);
+            Save(allEntries);
         }
 
         public void Update(GuestbookEntry entry)
         {
-            // Update the entry in the list.
-            // Call Save to refresh the JSON file.
+            List<GuestbookEntry> currentEntries = GetAll();
+            for (int i = 0; i < currentEntries.Count; i++)
+            {
+                GuestbookEntry current = currentEntries[i];
+                if (current.Id == entry.Id)
+                {
+                    currentEntries[i] = entry;
+                }
+            }
+            Save(currentEntries);
         }
 
         public void Delete(int id)
         {
-            // Delete the entry from the list.
-            // Call Save to refresh the JSON file.
+            List<GuestbookEntry> newList = new();
+            List<GuestbookEntry> currentEntries = GetAll();
+            for (int i = 0; i < currentEntries.Count; i++)
+            {
+                GuestbookEntry current = currentEntries[i];
+                if (current.Id != id)
+                {
+                    newList.Add(current);
+                }
+            }
+            Save(newList);
         }
 
         /////////////

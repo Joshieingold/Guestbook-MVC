@@ -42,5 +42,21 @@ namespace A3_Guestbook.Controllers
             var entry = _service.GetById(id);
             return View(entry);
         }
+
+        [HttpPost]
+        public IActionResult OnPostAdd(GuestbookEntry inEntry)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(inEntry);
+            }
+            bool success = _service.Add(inEntry);
+            if (!success)
+            {
+                ModelState.AddModelError("IDK", "idk");
+            }
+            TempData["Message"] = "Congrats you added a new entry!";
+            return List();
+        }
     } // end class
 }

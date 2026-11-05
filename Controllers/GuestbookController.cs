@@ -24,5 +24,23 @@ namespace A3_Guestbook.Controllers
             var entry = _service.GetById(id);
             return View(entry);
         }
+
+        public IActionResult Create()
+        {
+            GuestbookEntry blankEntry = new();
+            return View(blankEntry);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var entry = _service.GetById(id);
+            return View(entry);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var entry = _service.GetById(id);
+            return View(entry);
+        }
     } // end class
 }

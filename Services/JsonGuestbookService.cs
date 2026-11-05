@@ -30,15 +30,6 @@ namespace A3_Guestbook.Services
             }
         }
 
-        // private helper method
-        // call this method after you make a change to the guestbook in memory to save the new version to the file
-        private void Save(List<GuestbookEntry> entries)
-        {
-            var options = new JsonSerializerOptions { WriteIndented = true };
-            string json = JsonSerializer.Serialize(entries, options);
-            File.WriteAllText(_filePath, json);
-        }
-
         public List<GuestbookEntry> GetAll()
         {
             string jsonString = File.ReadAllText(_filePath);
@@ -62,6 +53,7 @@ namespace A3_Guestbook.Services
 
         public void Add(GuestbookEntry entry)
         {
+            entry.Id = GetUniqueId();
             // Add the entry to the list.
             // Call Save to refresh the JSON file.
         }
@@ -76,6 +68,34 @@ namespace A3_Guestbook.Services
         {
             // Delete the entry from the list.
             // Call Save to refresh the JSON file.
+        }
+
+        /////////////
+        // HELPERS //
+        /////////////
+
+        // Will look through all entries and find the max id + 1
+        private int GetUniqueId()
+        {
+            int max = 1;
+            List<GuestbookEntry> allEntries = GetAll();
+            for (int i = 0; i < allEntries.Count; i++)
+            {
+                GuestbookEntry current = allEntries[i];
+                if (current.Id > max)
+                {
+                    max = current.Id;
+                }
+            }
+            return max + 1;
+        }
+
+        // call this method after you make a change to the guestbook in memory to save the new version to the file
+        private void Save(List<GuestbookEntry> entries)
+        {
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string json = JsonSerializer.Serialize(entries, options);
+            File.WriteAllText(_filePath, json);
         }
     }
 }

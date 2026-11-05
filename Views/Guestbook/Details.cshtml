@@ -1,17 +1,16 @@
 @model A3_Guestbook.Models.GuestbookEntry
 
-<h2>Guestbook Entries</h2>
-<table class="table">
-    <tr>
-        <th>Author</th>
-        <th>Message</th>
-        <th>Date</th>
-    </tr>
-    <tr>
-        <td>@Model.Author</td>
-        <td>@Model.Message</td>
-        <td>@Model.CreatedAt</td>
-    </tr>
-</table>
-
-
+<div class="d-flex flex-row justify-content-between align-items-center">
+    <div class="writer-details">
+        <h2>Author: @Model.Author</h2>
+        <p>Written At: @Model.CreatedAt</p>
+    </div>
+    <div class="actions-wrapper">
+        <button class="btn btn-primary">Edit</button>
+        <button class="btn btn-danger">Delete</button>
+    </div>
+</div>
+<div>
+    <h4>Message:</h4>
+    <p class="card p-3">@Model.Message</p>
+</div>

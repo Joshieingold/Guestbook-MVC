@@ -50,12 +50,32 @@ namespace A3_Guestbook.Controllers
             {
                 return View(inEntry);
             }
-            bool success = _service.Add(inEntry);
-            if (!success)
-            {
-                ModelState.AddModelError("IDK", "idk");
-            }
+            _service.Add(inEntry);
+            // bool success = _service.Add(inEntry);
+            // if (!success)
+            // {
+            //     ModelState.AddModelError("IDK", "idk");
+            // }
             TempData["Message"] = "Congrats you added a new entry!";
+
+            return List();
+        }
+
+        [HttpPost]
+        public IActionResult OnPostDelete(int deleteId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Delete(deleteId);
+            }
+            _service.Delete(deleteId);
+            // bool success = _service.Delete(inEntry);
+            // if (!success)
+            // {
+            //     ModelState.AddModelError("IDK", "idk");
+            // }
+            TempData["Message"] = "Congrats you deleted the entry!";
+
             return List();
         }
     } // end class

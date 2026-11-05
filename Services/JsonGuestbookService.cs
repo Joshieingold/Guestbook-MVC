@@ -41,7 +41,8 @@ namespace A3_Guestbook.Services
 
         public List<GuestbookEntry> GetAll()
         {
-            return new List<GuestbookEntry>(); // remove me!
+            string jsonString = File.ReadAllText(_filePath);
+            return JsonSerializer.Deserialize<List<GuestbookEntry>>(jsonString) ?? new();
         }
 
         public GuestbookEntry? GetById(int id)

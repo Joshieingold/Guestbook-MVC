@@ -1,4 +1,20 @@
 @model List<A3_Guestbook.Models.GuestbookEntry>
 
 <h2>Guestbook Entries</h2>
+<table class="table">
+    <tr>
+        <th>Author</th>
+        <th>Message</th>
+        <th>Date</th>
+    </tr>
+    @foreach (GuestbookEntry item in @Model)
+    {
+        <tr>
+            <td>@item.Author</td>
+            <td>@item.Message</td>
+            <td>@item.CreatedAt</td>
+        </tr>
+    }
+</table>
+
 

@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using A3_Guestbook.Models;
 using A3_Guestbook.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace A3_Guestbook.Controllers
 {
@@ -18,6 +18,5 @@ namespace A3_Guestbook.Controllers
             var entries = _service.GetAll();
             return View(entries);
         }
-
     } // end class
 }

@@ -4,9 +4,13 @@
     <div class="writer-details">
         <h2>Author: <input type="text" name="Author" value="@Model.Author"/></h2>
     </div>
-    <div class="actions-wrapper">
-        <button class="btn btn-primary">Save</button>
-        <button class="btn btn-danger">Cancel</button>
+    <div class="actions-wrapper d-flex gap-2">
+        <form method="post">
+            <button class="btn btn-primary">Save</button>
+        </form>
+        <form method="post">
+            <button class="btn btn-danger" asp-action="List">Cancel</button>
+        </form>
     </div>
 </div>
 <div>

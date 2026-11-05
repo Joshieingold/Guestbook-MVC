@@ -5,9 +5,15 @@
         <h2>Author: @Model.Author</h2>
         <p>Written At: @Model.CreatedAt</p>
     </div>
-    <div class="actions-wrapper">
-        <button class="btn btn-primary">Edit</button>
-        <button class="btn btn-danger">Delete</button>
+    <div class="actions-wrapper d-flex gap-2">
+        <form>
+            <input type="hidden" name="id" value="@Model.Id"/>
+            <button class="btn btn-primary" asp-action="Edit">Edit</button>
+        </form>
+        <form>
+            <input type="hidden" name="id" value="@Model.Id"/>
+            <button class="btn btn-danger" asp-action="Delete">Delete</button>
+        </form>
     </div>
 </div>
 <div>

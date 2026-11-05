@@ -1,0 +1,20 @@
+[
+    {
+        "Id": 1,
+        "Author": "Marsha",
+        "Message": "Love the app! Make it better.",
+        "CreatedAt": "2026-10-22T09:11:47.1090431-03:00"
+    },
+    {
+        "Id": 2,
+        "Author": "Toby",
+        "Message": "Can I receive a copy of my entries? Please?",
+        "CreatedAt": "2026-10-23T15:44:26.5066785-03:00"
+    },
+    {
+        "Id": 3,
+        "Author": "Kevin",
+        "Message": "Cool! Looking forward to the next version.dfg",
+        "CreatedAt": "2026-10-24T05:25:28.66746-03:00"
+    }
+]

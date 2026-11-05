@@ -1,0 +1,17 @@
+@model A3_Guestbook.Models.GuestbookEntry
+
+<h2>Guestbook Entries</h2>
+<table class="table">
+    <tr>
+        <th>Author</th>
+        <th>Message</th>
+        <th>Date</th>
+    </tr>
+    <tr>
+        <td>@Model.Author</td>
+        <td>@Model.Message</td>
+        <td>@Model.CreatedAt</td>
+    </tr>
+</table>
+
+

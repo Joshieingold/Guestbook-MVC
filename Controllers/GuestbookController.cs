@@ -18,5 +18,11 @@ namespace A3_Guestbook.Controllers
             var entries = _service.GetAll();
             return View(entries);
         }
+
+        public IActionResult Details(int id)
+        {
+            var entry = _service.GetById(id);
+            return View(entry);
+        }
     } // end class
 }

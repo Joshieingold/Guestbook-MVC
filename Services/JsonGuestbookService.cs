@@ -47,7 +47,17 @@ namespace A3_Guestbook.Services
 
         public GuestbookEntry? GetById(int id)
         {
-            return null; // remove me!
+            List<GuestbookEntry> allEntries = GetAll();
+            for (int i = 0; i < allEntries.Count; i++)
+            {
+                GuestbookEntry current = allEntries[i];
+                if (current.Id == id)
+                {
+                    return current;
+                }
+            }
+            //NOTE: Could throw here.
+            return null;
         }
 
         public void Add(GuestbookEntry entry)

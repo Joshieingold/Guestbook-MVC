@@ -13,6 +13,11 @@ namespace A3_Guestbook.Controllers
             _service = service;
         }
 
+        public IActionResult Index()
+        {
+            return RedirectToAction("List", "Guestbook");
+        }
+
         public IActionResult List()
         {
             var entries = _service.GetAll();
@@ -25,58 +30,52 @@ namespace A3_Guestbook.Controllers
             return View(entry);
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             GuestbookEntry blankEntry = new();
             return View(blankEntry);
         }
 
+        [HttpPost]
+        public IActionResult Create(GuestbookEntry gbe)
+        {
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("HIT");
+                Console.Beep();
+                return View(gbe);
+            }
+            _service.Add(gbe);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             var entry = _service.GetById(id);
             return View(entry);
         }
 
+        [HttpPost]
+        public IActionResult Edit(GuestbookEntry gbe)
+        {
+            _service.Update(gbe);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
         public IActionResult Delete(int id)
         {
             var entry = _service.GetById(id);
             return View(entry);
         }
 
-        [HttpPost]
-        public IActionResult OnPostAdd(GuestbookEntry inEntry)
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(inEntry);
-            }
-            _service.Add(inEntry);
-            // bool success = _service.Add(inEntry);
-            // if (!success)
-            // {
-            //     ModelState.AddModelError("IDK", "idk");
-            // }
-            TempData["Message"] = "Congrats you added a new entry!";
-
-            return List();
-        }
-
-        [HttpPost]
-        public IActionResult OnPostDelete(int deleteId)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Delete(deleteId);
-            }
-            _service.Delete(deleteId);
-            // bool success = _service.Delete(inEntry);
-            // if (!success)
-            // {
-            //     ModelState.AddModelError("IDK", "idk");
-            // }
-            TempData["Message"] = "Congrats you deleted the entry!";
-
-            return List();
+            _service.Delete(id);
+            return RedirectToAction(nameof(Index));
         }
     } // end class
 }

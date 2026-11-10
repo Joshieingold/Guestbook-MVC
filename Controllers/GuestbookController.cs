@@ -42,8 +42,6 @@ namespace A3_Guestbook.Controllers
         {
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("HIT");
-                Console.Beep();
                 return View(gbe);
             }
             _service.Add(gbe);
@@ -53,6 +51,12 @@ namespace A3_Guestbook.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            // This would mean the model in the JSON is wrong. I think just
+            // Go back to the index is best
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction(nameof(Index));
+            }
             var entry = _service.GetById(id);
             return View(entry);
         }
@@ -60,6 +64,11 @@ namespace A3_Guestbook.Controllers
         [HttpPost]
         public IActionResult Edit(GuestbookEntry gbe)
         {
+            if (!ModelState.IsValid)
+            {
+                // In this case they should be brought back to the edit screen
+                return Edit(gbe.Id);
+            }
             _service.Update(gbe);
             return RedirectToAction(nameof(Index));
         }

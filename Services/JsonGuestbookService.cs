@@ -43,13 +43,13 @@ namespace A3_Guestbook.Services
                     return current;
                 }
             }
-            //NOTE: Could throw here.
             return null;
         }
 
         public void Add(GuestbookEntry entry)
         {
             entry.Id = GetUniqueId();
+            entry.CreatedAt = DateTime.Now;
             List<GuestbookEntry> allEntries = GetAll();
             allEntries.Add(entry);
             Save(allEntries);
@@ -57,6 +57,7 @@ namespace A3_Guestbook.Services
 
         public void Update(GuestbookEntry entry)
         {
+            entry.CreatedAt = DateTime.Now;
             List<GuestbookEntry> currentEntries = GetAll();
             for (int i = 0; i < currentEntries.Count; i++)
             {
@@ -89,6 +90,7 @@ namespace A3_Guestbook.Services
         /////////////
 
         // Will look through all entries and find the max id + 1
+        // Didnt realize that this was built into SQLite but its here now
         private int GetUniqueId()
         {
             int max = 1;

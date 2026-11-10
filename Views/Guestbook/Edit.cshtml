@@ -1,17 +1,17 @@
 @model A3_Guestbook.Models.GuestbookEntry
 
-        <form method="post">
-<div class="d-flex flex-row justify-content-between align-items-center">
-    <div class="writer-details">
-        <h2>Author: <input type="text" value="@Model.Author" asp-for="Author" /></h2>
-    </div>
-    <div class="actions-wrapper d-flex gap-2">
+<form method="post">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+        <div class="writer-details">
+            <h2>Author: <input type="text" value="@Model.Author" asp-for="Author" /></h2>
+        </div>
+        <div class="actions-wrapper d-flex gap-2">
             <button class="btn btn-primary" asp-action="Edit">Save</button>
-            <button class="btn btn-danger" asp-action="List">Cancel</button>
+            <a class="btn btn-danger" asp-action="List">Cancel</a>
+        </div>
     </div>
-</div>
-<div>
-    <h4>Message:</h4>
-    <textarea class="form-control" asp-for="Message">@Model.Message</textarea>
-</div>
-        </form>
+    <div>
+        <h4>Message:</h4>
+        <textarea class="form-control" asp-for="Message">@Model.Message</textarea>
+    </div>
+</form>

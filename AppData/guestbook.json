@@ -1,38 +1,62 @@
 [
   {
-    "Id": 1,
-    "Author": "Martha",
-    "Message": "Love the app! Make it better.",
-    "CreatedAt": "2026-11-10T18:10:22.6634124-04:00"
-  },
-  {
     "Id": 2,
-    "Author": "Toby",
-    "Message": "Can I receive a copy of my entries? Please?",
-    "CreatedAt": "2026-10-23T15:44:26.5066785-03:00"
+    "Author": "Josh",
+    "Message": "Can you add neovim controls to the website?",
+    "CreatedAt": "2026-11-12T00:51:34.2729097-04:00"
   },
   {
     "Id": 3,
-    "Author": "Kevin",
-    "Message": "Cool! Looking forward to the next version.dfg",
-    "CreatedAt": "2026-10-24T05:25:28.66746-03:00"
+    "Author": "Elijah",
+    "Message": "There is not enough art! Please add art.",
+    "CreatedAt": "2026-11-12T00:51:51.8467024-04:00"
   },
   {
     "Id": 4,
-    "Author": "Josh",
-    "Message": "Test",
-    "CreatedAt": "2026-11-10T18:04:07.2376015-04:00"
+    "Author": "Jayden",
+    "Message": "I am from Fredricton.",
+    "CreatedAt": "2026-11-12T00:52:16.6465665-04:00"
   },
   {
     "Id": 5,
-    "Author": "New User",
-    "Message": "Their message",
-    "CreatedAt": "2026-11-10T18:03:56.8485117-04:00"
+    "Author": "Ethan",
+    "Message": "I LOVE REGEX. (only in path of excile)",
+    "CreatedAt": "2026-11-12T00:52:38.3694585-04:00"
   },
   {
     "Id": 6,
-    "Author": "NewTest",
-    "Message": "Date should work now?",
-    "CreatedAt": "2026-11-10T16:20:59.2214197-04:00"
+    "Author": "Jeremy",
+    "Message": "I am not the king of cups\r\n",
+    "CreatedAt": "2026-11-12T00:54:36.9754237-04:00"
+  },
+  {
+    "Id": 7,
+    "Author": "Sarah",
+    "Message": "I would add more pink or neon lights to this website if I were you.",
+    "CreatedAt": "2026-11-12T01:01:22.6665929-04:00"
+  },
+  {
+    "Id": 8,
+    "Author": "Lucas",
+    "Message": "Man this course looks easy I could do it.",
+    "CreatedAt": "2026-11-12T01:02:12.2530579-04:00"
+  },
+  {
+    "Id": 9,
+    "Author": "Rory",
+    "Message": "This website is so insecure. I could hack it in milliseconds its over for you I already have your IP",
+    "CreatedAt": "2026-11-12T01:02:59.3842763-04:00"
+  },
+  {
+    "Id": 10,
+    "Author": "Vitor",
+    "Message": "Have you considered remaking this in PHP?",
+    "CreatedAt": "2026-11-12T01:03:54.5955812-04:00"
+  },
+  {
+    "Id": 11,
+    "Author": "Jacob",
+    "Message": "I am a year 3.",
+    "CreatedAt": "2026-11-12T01:05:45.7820012-04:00"
   }
 ]

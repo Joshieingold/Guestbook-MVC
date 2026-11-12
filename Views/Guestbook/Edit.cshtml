@@ -2,6 +2,7 @@
 
 <div asp-validation-summary="All"></div>
 <form method="post">
+    <input type="hidden" asp-for="Id" />
     <div class="d-flex flex-row justify-content-between align-items-center">
         <div class="writer-details">
             <h2>Author: <input type="text" value="@Model.Author" asp-for="Author" /></h2>

@@ -57,13 +57,13 @@ namespace A3_Guestbook.Services
 
         public void Update(GuestbookEntry entry)
         {
-            entry.CreatedAt = DateTime.Now;
             List<GuestbookEntry> currentEntries = GetAll();
             for (int i = 0; i < currentEntries.Count; i++)
             {
                 GuestbookEntry current = currentEntries[i];
                 if (current.Id == entry.Id)
                 {
+                    entry.CreatedAt = currentEntries[i].CreatedAt;
                     currentEntries[i] = entry;
                 }
             }

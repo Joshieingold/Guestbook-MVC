@@ -3,9 +3,10 @@
 <div class="d-flex flex-row justify-content-between align-items-center">
     <h2>Guestbook Entries</h2>
     <form method="post">
-        <button action="submit" asp-action="Create" class="btn btn-primary">New Entry</button>
+        <a action="submit" asp-action="Create" class="btn btn-primary">New Entry</a>
     </form>
 </div>
+<div asp-validation-summary="All"></div>
 
 <table class="table">
     <tr>

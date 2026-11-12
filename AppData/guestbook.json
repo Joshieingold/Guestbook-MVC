@@ -3,7 +3,7 @@
     "Id": 1,
     "Author": "Martha",
     "Message": "Love the app! Make it better.",
-    "CreatedAt": "0001-01-01T00:00:00"
+    "CreatedAt": "2026-11-10T18:10:22.6634124-04:00"
   },
   {
     "Id": 2,
@@ -21,13 +21,13 @@
     "Id": 4,
     "Author": "Josh",
     "Message": "Test",
-    "CreatedAt": "0001-01-01T00:00:00"
+    "CreatedAt": "2026-11-10T18:04:07.2376015-04:00"
   },
   {
     "Id": 5,
-    "Author": "NEWUSER",
-    "Message": "THeir message",
-    "CreatedAt": "0001-01-01T00:00:00"
+    "Author": "New User",
+    "Message": "Their message",
+    "CreatedAt": "2026-11-10T18:03:56.8485117-04:00"
   },
   {
     "Id": 6,

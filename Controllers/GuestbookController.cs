@@ -13,6 +13,9 @@ namespace A3_Guestbook.Controllers
             _service = service;
         }
 
+        // This technically meets the requirements of going to the index.
+        // I think its better to go to the index of the
+        // Guestbook Ie. List
         public IActionResult Index()
         {
             return RedirectToAction("List", "Guestbook");
@@ -51,12 +54,6 @@ namespace A3_Guestbook.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            // This would mean the model in the JSON is wrong. I think just
-            // Go back to the index is best
-            if (!ModelState.IsValid)
-            {
-                return RedirectToAction(nameof(Index));
-            }
             var entry = _service.GetById(id);
             return View(entry);
         }
@@ -66,8 +63,7 @@ namespace A3_Guestbook.Controllers
         {
             if (!ModelState.IsValid)
             {
-                // In this case they should be brought back to the edit screen
-                return Edit(gbe.Id);
+                return View(gbe);
             }
             _service.Update(gbe);
             return RedirectToAction(nameof(Index));

@@ -6,10 +6,12 @@ namespace A3_Guestbook.Models
     {
         public int Id { get; set; }
 
-        [Required, StringLength(50)]
+        [Required(ErrorMessage = "Please enter your name")]
+        [StringLength(50, ErrorMessage = "Your name cannot exceed 50 characters")]
         public string? Author { get; set; }
 
-        [Required, StringLength(200)]
+        [Required(ErrorMessage = "Please write a message")]
+        [StringLength(200, ErrorMessage = "Message cannot exceed 200 characters")]
         public string? Message { get; set; }
 
         public DateTime CreatedAt { get; set; }

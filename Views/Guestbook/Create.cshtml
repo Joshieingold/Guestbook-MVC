@@ -1,6 +1,7 @@
 @model A3_Guestbook.Models.GuestbookEntry
 
 <form method="post">
+    <div asp-validation-summary="All"></div>
     <div class="d-flex flex-row justify-content-between align-items-center">
         <div class="writer-details">
             <h2>Author: <input type="text" asp-for="Author"/></h2>
